@@ -1,0 +1,32 @@
+package com.twf.class_14_4_1;
+
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+
+import javax.swing.JOptionPane;
+
+public class MyWindowListener extends WindowAdapter {
+
+	private String result;
+	public MyWindowListener( ) {
+		super();
+	}
+
+	@Override
+	public void windowClosing(WindowEvent e) {
+		super.windowClosing(e);
+		//JOptionPane.showConfirmDialog(null,GameRule.showResult() , "对战详情", JOptionPane.CANCEL_OPTION );
+		//JOptionPane.showConfirmDialog(new ResultGUI(),"");
+		//e.getWindow().setVisible(false);
+		new GUI().setVisible(true);
+	}
+
+	public String getResult() {
+		return result;
+	}
+
+	public void setResult(String result) {
+		this.result = result;
+	}
+
+}
